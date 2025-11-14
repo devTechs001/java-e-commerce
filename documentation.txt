@@ -1,0 +1,788 @@
+ Enterprise E-Commerce Platform - Complete Structure & Documentation
+Complete Project Structure
+
+e-commerce-platform/
+├── README.md
+├── LICENSE
+├── pom.xml
+├── .gitignore
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+│
+├── docs/
+│   ├── 01-OVERVIEW.md
+│   ├── 02-ARCHITECTURE.md
+│   ├── 03-SETUP_GUIDE.md
+│   ├── 04-API_DOCUMENTATION.md
+│   ├── 05-DATABASE_SCHEMA.md
+│   ├── 06-DEPLOYMENT_GUIDE.md
+│   ├── 07-SECURITY.md
+│   ├── 08-AI_SYSTEMS.md
+│   ├── 09-WEBSOCKET_IMPLEMENTATION.md
+│   ├── 10-PAYMENT_INTEGRATION.md
+│   ├── 11-MOBILE_DEPLOYMENT.md
+│   ├── 12-TROUBLESHOOTING.md
+│   ├── 13-BEST_PRACTICES.md
+│   └── diagrams/
+│       ├── architecture-diagram.png
+│       ├── database-erd.png
+│       ├── workflow-diagrams.png
+│       └── deployment-topology.png
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── ecommerce/
+│   │   │           ├── EcommerceApplication.java
+│   │   │           │
+│   │   │           ├── config/
+│   │   │           │   ├── AppConfig.java
+│   │   │           │   ├── DatabaseConfig.java
+│   │   │           │   ├── SecurityConfig.java
+│   │   │           │   ├── WebSocketConfig.java
+│   │   │           │   ├── AIConfig.java
+│   │   │           │   ├── PaymentConfig.java
+│   │   │           │   ├── CacheConfig.java
+│   │   │           │   ├── EmailConfig.java
+│   │   │           │   ├── SMSConfig.java
+│   │   │           │   ├── CloudStorageConfig.java
+│   │   │           │   └── SchedulerConfig.java
+│   │   │           │
+│   │   │           ├── models/
+│   │   │           │   ├── entity/
+│   │   │           │   │   ├── User.java
+│   │   │           │   │   ├── Role.java
+│   │   │           │   │   ├── Permission.java
+│   │   │           │   │   ├── Product.java
+│   │   │           │   │   ├── ProductVariant.java
+│   │   │           │   │   ├── Category.java
+│   │   │           │   │   ├── Subcategory.java
+│   │   │           │   │   ├── Order.java
+│   │   │           │   │   ├── OrderItem.java
+│   │   │           │   │   ├── Cart.java
+│   │   │           │   │   ├── CartItem.java
+│   │   │           │   │   ├── Review.java
+│   │   │           │   │   ├── Rating.java
+│   │   │           │   │   ├── Payment.java
+│   │   │           │   │   ├── PaymentMethod.java
+│   │   │           │   │   ├── Transaction.java
+│   │   │           │   │   ├── Wallet.java
+│   │   │           │   │   ├── WalletTransaction.java
+│   │   │           │   │   ├── Address.java
+│   │   │           │   │   ├── Appointment.java
+│   │   │           │   │   ├── Notification.java
+│   │   │           │   │   ├── Message.java
+│   │   │           │   │   ├── Conversation.java
+│   │   │           │   │   ├── VideoCall.java
+│   │   │           │   │   ├── SellerProfile.java
+│   │   │           │   │   ├── SellerLink.java
+│   │   │           │   │   ├── Store.java
+│   │   │           │   │   ├── StoreSettings.java
+│   │   │           │   │   ├── Coupon.java
+│   │   │           │   │   ├── Discount.java
+│   │   │           │   │   ├── Wishlist.java
+│   │   │           │   │   ├── FAQ.java
+│   │   │           │   │   ├── SupportTicket.java
+│   │   │           │   │   ├── AIConversation.java
+│   │   │           │   │   ├── AIRecommendation.java
+│   │   │           │   │   ├── Analytics.java
+│   │   │           │   │   ├── Subscription.java
+│   │   │           │   │   ├── Invoice.java
+│   │   │           │   │   ├── Shipment.java
+│   │   │           │   │   ├── ShippingMethod.java
+│   │   │           │   │   ├── ReturnRequest.java
+│   │   │           │   │   ├── Refund.java
+│   │   │           │   │   ├── Inventory.java
+│   │   │           │   │   ├── Supplier.java
+│   │   │           │   │   ├── AuditLog.java
+│   │   │           │   │   └── SystemSettings.java
+│   │   │           │   │
+│   │   │           │   ├── dto/
+│   │   │           │   │   ├── request/
+│   │   │           │   │   │   ├── LoginRequest.java
+│   │   │           │   │   │   ├── RegisterRequest.java
+│   │   │           │   │   │   ├── ProductRequest.java
+│   │   │           │   │   │   ├── OrderRequest.java
+│   │   │           │   │   │   ├── PaymentRequest.java
+│   │   │           │   │   │   ├── AppointmentRequest.java
+│   │   │           │   │   │   ├── MessageRequest.java
+│   │   │           │   │   │   ├── ReviewRequest.java
+│   │   │           │   │   │   └── SupportTicketRequest.java
+│   │   │           │   │   │
+│   │   │           │   │   └── response/
+│   │   │           │   │       ├── AuthResponse.java
+│   │   │           │   │       ├── UserResponse.java
+│   │   │           │   │       ├── ProductResponse.java
+│   │   │           │   │       ├── OrderResponse.java
+│   │   │           │   │       ├── PaymentResponse.java
+│   │   │           │   │       ├── AnalyticsResponse.java
+│   │   │           │   │       ├── AIResponse.java
+│   │   │           │   │       └── ApiResponse.java
+│   │   │           │   │
+│   │   │           │   └── enums/
+│   │   │           │       ├── UserRole.java
+│   │   │           │       ├── OrderStatus.java
+│   │   │           │       ├── PaymentStatus.java
+│   │   │           │       ├── PaymentType.java
+│   │   │           │       ├── ShipmentStatus.java
+│   │   │           │       ├── NotificationType.java
+│   │   │           │       ├── AppointmentStatus.java
+│   │   │           │       └── TicketStatus.java
+│   │   │           │
+│   │   │           ├── controllers/
+│   │   │           │   ├── auth/
+│   │   │           │   │   ├── LoginController.java
+│   │   │           │   │   ├── RegisterController.java
+│   │   │           │   │   ├── ForgotPasswordController.java
+│   │   │           │   │   ├── ResetPasswordController.java
+│   │   │           │   │   ├── VerifyEmailController.java
+│   │   │           │   │   └── OAuth2Controller.java
+│   │   │           │   │
+│   │   │           │   ├── client/
+│   │   │           │   │   ├── DashboardController.java
+│   │   │           │   │   ├── LandingController.java
+│   │   │           │   │   ├── ProductController.java
+│   │   │           │   │   ├── ProductDetailController.java
+│   │   │           │   │   ├── CartController.java
+│   │   │           │   │   ├── CheckoutController.java
+│   │   │           │   │   ├── OrderController.java
+│   │   │           │   │   ├── OrderTrackingController.java
+│   │   │           │   │   ├── ProfileController.java
+│   │   │           │   │   ├── WalletController.java
+│   │   │           │   │   ├── WishlistController.java
+│   │   │           │   │   ├── ReviewController.java
+│   │   │           │   │   ├── AppointmentController.java
+│   │   │           │   │   ├── NotificationController.java
+│   │   │           │   │   ├── SettingsController.java
+│   │   │           │   │   └── SupportController.java
+│   │   │           │   │
+│   │   │           │   ├── admin/
+│   │   │           │   │   ├── AdminDashboardController.java
+│   │   │           │   │   ├── ProductManagementController.java
+│   │   │           │   │   ├── CategoryManagementController.java
+│   │   │           │   │   ├── UserManagementController.java
+│   │   │           │   │   ├── OrderManagementController.java
+│   │   │           │   │   ├── InventoryController.java
+│   │   │           │   │   ├── AnalyticsController.java
+│   │   │           │   │   ├── ReportsController.java
+│   │   │           │   │   ├── CouponManagementController.java
+│   │   │           │   │   ├── SettingsController.java
+│   │   │           │   │   ├── SystemMonitorController.java
+│   │   │           │   │   └── AuditLogController.java
+│   │   │           │   │
+│   │   │           │   ├── seller/
+│   │   │           │   │   ├── SellerDashboardController.java
+│   │   │           │   │   ├── SellerProductController.java
+│   │   │           │   │   ├── SellerOrderController.java
+│   │   │           │   │   ├── SellerAnalyticsController.java
+│   │   │           │   │   ├── SellerStoreController.java
+│   │   │           │   │   ├── SellerLinkController.java
+│   │   │           │   │   ├── SellerPayoutController.java
+│   │   │           │   │   └── SellerSettingsController.java
+│   │   │           │   │
+│   │   │           │   ├── ai/
+│   │   │           │   │   ├── AIChatController.java
+│   │   │           │   │   ├── AIAssistantController.java
+│   │   │           │   │   ├── ProductRecommendationController.java
+│   │   │           │   │   ├── AIMonitoringController.java
+│   │   │           │   │   ├── SentimentAnalysisController.java
+│   │   │           │   │   └── PredictiveAnalyticsController.java
+│   │   │           │   │
+│   │   │           │   ├── payment/
+│   │   │           │   │   ├── PaymentController.java
+│   │   │           │   │   ├── StripeController.java
+│   │   │           │   │   ├── PayPalController.java
+│   │   │           │   │   ├── CryptoPaymentController.java
+│   │   │           │   │   └── RefundController.java
+│   │   │           │   │
+│   │   │           │   ├── websocket/
+│   │   │           │   │   ├── ChatWebSocketController.java
+│   │   │           │   │   ├── VideoCallWebSocketController.java
+│   │   │           │   │   ├── NotificationWebSocketController.java
+│   │   │           │   │   └── OrderTrackingWebSocketController.java
+│   │   │           │   │
+│   │   │           │   └── api/
+│   │   │           │       ├── v1/
+│   │   │           │       │   └── RestApiController.java
+│   │   │           │       └── v2/
+│   │   │           │           └── RestApiV2Controller.java
+│   │   │           │
+│   │   │           ├── services/
+│   │   │           │   ├── interfaces/
+│   │   │           │   │   ├── IUserService.java
+│   │   │           │   │   ├── IProductService.java
+│   │   │           │   │   ├── IOrderService.java
+│   │   │           │   │   ├── IPaymentService.java
+│   │   │           │   │   ├── INotificationService.java
+│   │   │           │   │   └── IAIService.java
+│   │   │           │   │
+│   │   │           │   ├── impl/
+│   │   │           │   │   ├── UserServiceImpl.java
+│   │   │           │   │   ├── ProductServiceImpl.java
+│   │   │           │   │   ├── OrderServiceImpl.java
+│   │   │           │   │   ├── CartServiceImpl.java
+│   │   │           │   │   ├── PaymentServiceImpl.java
+│   │   │           │   │   ├── WalletServiceImpl.java
+│   │   │           │   │   ├── AuthServiceImpl.java
+│   │   │           │   │   ├── NotificationServiceImpl.java
+│   │   │           │   │   ├── EmailServiceImpl.java
+│   │   │           │   │   ├── SMSServiceImpl.java
+│   │   │           │   │   ├── AIServiceImpl.java
+│   │   │           │   │   ├── AIMonitoringServiceImpl.java
+│   │   │           │   │   ├── LocationServiceImpl.java
+│   │   │           │   │   ├── MapServiceImpl.java
+│   │   │           │   │   ├── WebSocketServiceImpl.java
+│   │   │           │   │   ├── FileStorageServiceImpl.java
+│   │   │           │   │   ├── AnalyticsServiceImpl.java
+│   │   │           │   │   ├── RecommendationServiceImpl.java
+│   │   │           │   │   ├── SearchServiceImpl.java
+│   │   │           │   │   ├── InventoryServiceImpl.java
+│   │   │           │   │   ├── ShippingServiceImpl.java
+│   │   │           │   │   ├── AppointmentServiceImpl.java
+│   │   │           │   │   ├── SupportServiceImpl.java
+│   │   │           │   │   ├── SellerServiceImpl.java
+│   │   │           │   │   ├── LinkGenerationServiceImpl.java
+│   │   │           │   │   ├── CacheServiceImpl.java
+│   │   │           │   │   ├── AuditServiceImpl.java
+│   │   │           │   │   └── ReportServiceImpl.java
+│   │   │           │   │
+│   │   │           │   └── background/
+│   │   │           │       ├── ScheduledTaskService.java
+│   │   │           │       ├── EmailQueueService.java
+│   │   │           │       ├── NotificationQueueService.java
+│   │   │           │       ├── OrderProcessingService.java
+│   │   │           │       ├── DataCleanupService.java
+│   │   │           │       └── BackupService.java
+│   │   │           │
+│   │   │           ├── repositories/
+│   │   │           │   ├── UserRepository.java
+│   │   │           │   ├── ProductRepository.java
+│   │   │           │   ├── OrderRepository.java
+│   │   │           │   ├── CartRepository.java
+│   │   │           │   ├── PaymentRepository.java
+│   │   │           │   ├── WalletRepository.java
+│   │   │           │   ├── CategoryRepository.java
+│   │   │           │   ├── ReviewRepository.java
+│   │   │           │   ├── NotificationRepository.java
+│   │   │           │   ├── MessageRepository.java
+│   │   │           │   ├── AppointmentRepository.java
+│   │   │           │   ├── SellerRepository.java
+│   │   │           │   ├── StoreRepository.java
+│   │   │           │   ├── AnalyticsRepository.java
+│   │   │           │   ├── FAQRepository.java
+│   │   │           │   ├── SupportTicketRepository.java
+│   │   │           │   └── AuditLogRepository.java
+│   │   │           │
+│   │   │           ├── dao/
+│   │   │           │   ├── BaseDAO.java
+│   │   │           │   ├── UserDAO.java
+│   │   │           │   ├── ProductDAO.java
+│   │   │           │   ├── OrderDAO.java
+│   │   │           │   └── ... (other DAOs)
+│   │   │           │
+│   │   │           ├── security/
+│   │   │           │   ├── JwtTokenProvider.java
+│   │   │           │   ├── JwtAuthenticationFilter.java
+│   │   │           │   ├── UserDetailsServiceImpl.java
+│   │   │           │   ├── PasswordEncoder.java
+│   │   │           │   ├── SecurityContextHolder.java
+│   │   │           │   ├── RateLimiter.java
+│   │   │           │   ├── EncryptionUtil.java
+│   │   │           │   └── OAuth2Handler.java
+│   │   │           │
+│   │   │           ├── middleware/
+│   │   │           │   ├── AuthenticationMiddleware.java
+│   │   │           │   ├── AuthorizationMiddleware.java
+│   │   │           │   ├── LoggingMiddleware.java
+│   │   │           │   ├── ExceptionHandlerMiddleware.java
+│   │   │           │   ├── RateLimitMiddleware.java
+│   │   │           │   └── CorsMiddleware.java
+│   │   │           │
+│   │   │           ├── utils/
+│   │   │           │   ├── DatabaseUtil.java
+│   │   │           │   ├── ValidationUtil.java
+│   │   │           │   ├── DateUtil.java
+│   │   │           │   ├── StringUtil.java
+│   │   │           │   ├── FileUtil.java
+│   │   │           │   ├── ImageUtil.java
+│   │   │           │   ├── PDFUtil.java
+│   │   │           │   ├── ExcelUtil.java
+│   │   │           │   ├── CryptoUtil.java
+│   │   │           │   ├── QRCodeUtil.java
+│   │   │           │   ├── BarcodeUtil.java
+│   │   │           │   ├── GeoUtil.java
+│   │   │           │   ├── CurrencyUtil.java
+│   │   │           │   ├── EmailTemplateUtil.java
+│   │   │           │   ├── SMSTemplateUtil.java
+│   │   │           │   ├── JsonUtil.java
+│   │   │           │   ├── XmlUtil.java
+│   │   │           │   └── LoggerUtil.java
+│   │   │           │
+│   │   │           ├── integrations/
+│   │   │           │   ├── payment/
+│   │   │           │   │   ├── StripeIntegration.java
+│   │   │           │   │   ├── PayPalIntegration.java
+│   │   │           │   │   ├── SquareIntegration.java
+│   │   │           │   │   └── CryptoPaymentIntegration.java
+│   │   │           │   │
+│   │   │           │   ├── shipping/
+│   │   │           │   │   ├── FedExIntegration.java
+│   │   │           │   │   ├── UPSIntegration.java
+│   │   │           │   │   ├── DHLIntegration.java
+│   │   │           │   │   └── USPSIntegration.java
+│   │   │           │   │
+│   │   │           │   ├── ai/
+│   │   │           │   │   ├── OpenAIIntegration.java
+│   │   │           │   │   ├── GoogleAIIntegration.java
+│   │   │           │   │   ├── IBMWatsonIntegration.java
+│   │   │           │   │   └── CustomMLModelIntegration.java
+│   │   │           │   │
+│   │   │           │   ├── maps/
+│   │   │           │   │   ├── GoogleMapsIntegration.java
+│   │   │           │   │   ├── MapBoxIntegration.java
+│   │   │           │   │   └── HereMapsIntegration.java
+│   │   │           │   │
+│   │   │           │   ├── email/
+│   │   │           │   │   ├── SendGridIntegration.java
+│   │   │           │   │   ├── MailgunIntegration.java
+│   │   │           │   │   └── AmazonSESIntegration.java
+│   │   │           │   │
+│   │   │           │   ├── sms/
+│   │   │           │   │   ├── TwilioIntegration.java
+│   │   │           │   │   ├── NexmoIntegration.java
+│   │   │           │   │   └── AmazonSNSIntegration.java
+│   │   │           │   │
+│   │   │           │   ├── storage/
+│   │   │           │   │   ├── AWSs3Integration.java
+│   │   │           │   │   ├── GoogleCloudStorageIntegration.java
+│   │   │           │   │   └── AzureBlobIntegration.java
+│   │   │           │   │
+│   │   │           │   └── analytics/
+│   │   │           │       ├── GoogleAnalyticsIntegration.java
+│   │   │           │       ├── MixpanelIntegration.java
+│   │   │           │       └── SegmentIntegration.java
+│   │   │           │
+│   │   │           ├── ai/
+│   │   │           │   ├── chatbot/
+│   │   │           │   │   ├── ChatbotEngine.java
+│   │   │           │   │   ├── NLPProcessor.java
+│   │   │           │   │   ├── IntentRecognizer.java
+│   │   │           │   │   ├── EntityExtractor.java
+│   │   │           │   │   └── ResponseGenerator.java
+│   │   │           │   │
+│   │   │           │   ├── recommendation/
+│   │   │           │   │   ├── CollaborativeFiltering.java
+│   │   │           │   │   ├── ContentBasedFiltering.java
+│   │   │           │   │   ├── HybridRecommender.java
+│   │   │           │   │   └── PersonalizationEngine.java
+│   │   │           │   │
+│   │   │           │   ├── monitoring/
+│   │   │           │   │   ├── FraudDetection.java
+│   │   │           │   │   ├── AnomalyDetection.java
+│   │   │           │   │   ├── BehaviorAnalysis.java
+│   │   │           │   │   ├── TrendAnalysis.java
+│   │   │           │   │   └── PredictiveMaintenanceAI.java
+│   │   │           │   │
+│   │   │           │   └── neural/
+│   │   │           │       ├── NeuralNetwork.java
+│   │   │           │       ├── DeepLearningModel.java
+│   │   │           │       ├── ImageRecognition.java
+│   │   │           │       └── SentimentAnalysisModel.java
+│   │   │           │
+│   │   │           ├── websocket/
+│   │   │           │   ├── handlers/
+│   │   │           │   │   ├── ChatMessageHandler.java
+│   │   │           │   │   ├── VideoCallHandler.java
+│   │   │           │   │   ├── NotificationHandler.java
+│   │   │           │   │   └── PresenceHandler.java
+│   │   │           │   │
+│   │   │           │   ├── sessions/
+│   │   │           │   │   ├── SessionManager.java
+│   │   │           │   │   ├── UserSession.java
+│   │   │           │   │   └── ConnectionPool.java
+│   │   │           │   │
+│   │   │           │   └── encoders/
+│   │   │           │       ├── MessageEncoder.java
+│   │   │           │       └── MessageDecoder.java
+│   │   │           │
+│   │   │           ├── exceptions/
+│   │   │           │   ├── BaseException.java
+│   │   │           │   ├── AuthenticationException.java
+│   │   │           │   ├── AuthorizationException.java
+│   │   │           │   ├── ValidationException.java
+│   │   │           │   ├── ResourceNotFoundException.java
+│   │   │           │   ├── DuplicateResourceException.java
+│   │   │           │   ├── PaymentException.java
+│   │   │           │   ├── InsufficientFundsException.java
+│   │   │           │   ├── ServiceUnavailableException.java
+│   │   │           │   └── GlobalExceptionHandler.java
+│   │   │           │
+│   │   │           ├── validators/
+│   │   │           │   ├── UserValidator.java
+│   │   │           │   ├── ProductValidator.java
+│   │   │           │   ├── OrderValidator.java
+│   │   │           │   ├── PaymentValidator.java
+│   │   │           │   ├── EmailValidator.java
+│   │   │           │   ├── PhoneValidator.java
+│   │   │           │   └── AddressValidator.java
+│   │   │           │
+│   │   │           └── constants/
+│   │   │               ├── AppConstants.java
+│   │   │               ├── MessageConstants.java
+│   │   │               ├── ErrorConstants.java
+│   │   │               ├── RouteConstants.java
+│   │   │               └── ConfigConstants.java
+│   │   │
+│   │   └── resources/
+│   │       ├── fxml/
+│   │       │   ├── auth/
+│   │       │   │   ├── splash.fxml
+│   │       │   │   ├── login.fxml
+│   │       │   │   ├── register.fxml
+│   │       │   │   ├── forgot-password.fxml
+│   │       │   │   ├── reset-password.fxml
+│   │       │   │   └── verify-email.fxml
+│   │       │   │
+│   │       │   ├── client/
+│   │       │   │   ├── landing.fxml
+│   │       │   │   ├── dashboard.fxml
+│   │       │   │   ├── products.fxml
+│   │       │   │   ├── product-detail.fxml
+│   │       │   │   ├── product-comparison.fxml
+│   │       │   │   ├── cart.fxml
+│   │       │   │   ├── checkout.fxml
+│   │       │   │   ├── payment.fxml
+│   │       │   │   ├── orders.fxml
+│   │       │   │   ├── order-detail.fxml
+│   │       │   │   ├── order-tracking.fxml
+│   │       │   │   ├── profile.fxml
+│   │       │   │   ├── edit-profile.fxml
+│   │       │   │   ├── wallet.fxml
+│   │       │   │   ├── wallet-topup.fxml
+│   │       │   │   ├── wishlist.fxml
+│   │       │   │   ├── reviews.fxml
+│   │       │   │   ├── appointments.fxml
+│   │       │   │   ├── book-appointment.fxml
+│   │       │   │   ├── notifications.fxml
+│   │       │   │   ├── messages.fxml
+│   │       │   │   ├── settings.fxml
+│   │       │   │   ├── support.fxml
+│   │       │   │   ├── faq.fxml
+│   │       │   │   └── help.fxml
+│   │       │   │
+│   │       │   ├── admin/
+│   │       │   │   ├── admin-dashboard.fxml
+│   │       │   │   ├── product-management.fxml
+│   │       │   │   ├── add-product.fxml
+│   │       │   │   ├── edit-product.fxml
+│   │       │   │   ├── category-management.fxml
+│   │       │   │   ├── user-management.fxml
+│   │       │   │   ├── user-details.fxml
+│   │       │   │   ├── order-management.fxml
+│   │       │   │   ├── inventory-management.fxml
+│   │       │   │   ├── analytics.fxml
+│   │       │   │   ├── sales-reports.fxml
+│   │       │   │   ├── revenue-reports.fxml
+│   │       │   │   ├── customer-reports.fxml
+│   │       │   │   ├── coupon-management.fxml
+│   │       │   │   ├── discount-management.fxml
+│   │       │   │   ├── shipping-management.fxml
+│   │       │   │   ├── payment-settings.fxml
+│   │       │   │   ├── admin-settings.fxml
+│   │       │   │   ├── system-monitor.fxml
+│   │       │   │   ├── audit-logs.fxml
+│   │       │   │   └── backup-restore.fxml
+│   │       │   │
+│   │       │   ├── seller/
+│   │       │   │   ├── seller-dashboard.fxml
+│   │       │   │   ├── seller-products.fxml
+│   │       │   │   ├── seller-add-product.fxml
+│   │       │   │   ├── seller-orders.fxml
+│   │       │   │   ├── seller-analytics.fxml
+│   │       │   │   ├── seller-store.fxml
+│   │       │   │   ├── seller-link-generator.fxml
+│   │       │   │   ├── seller-customer-chat.fxml
+│   │       │   │   ├── seller-payouts.fxml
+│   │       │   │   └── seller-settings.fxml
+│   │       │   │
+│   │       │   ├── ai/
+│   │       │   │   ├── ai-chat.fxml
+│   │       │   │   ├── ai-assistant.fxml
+│   │       │   │   ├── recommendations.fxml
+│   │       │   │   ├── ai-monitoring.fxml
+│   │       │   │   └── predictive-analytics.fxml
+│   │       │   │
+│   │       │   ├── video/
+│   │       │   │   ├── video-call.fxml
+│   │       │   │   ├── video-consultation.fxml
+│   │       │   │   └── screen-share.fxml
+│   │       │   │
+│   │       │   └── components/
+│   │       │       ├── navigation.fxml
+│   │       │       ├── sidebar.fxml
+│   │       │       ├── header.fxml
+│   │       │       ├── footer.fxml
+│   │       │       ├── product-card.fxml
+│   │       │       ├── category-card.fxml
+│   │       │       ├── order-card.fxml
+│   │       │       ├── notification-popup.fxml
+│   │       │       ├── chat-bubble.fxml
+│   │       │       ├── modal-dialog.fxml
+│   │       │       ├── loading-spinner.fxml
+│   │       │       ├── pagination.fxml
+│   │       │       ├── search-bar.fxml
+│   │       │       ├── filter-panel.fxml
+│   │       │       ├── rating-stars.fxml
+│   │       │       └── breadcrumb.fxml
+│   │       │
+│   │       ├── css/
+│   │       │   ├── main.css
+│   │       │   ├── theme-light.css
+│   │       │   ├── theme-dark.css
+│   │       │   ├── auth.css
+│   │       │   ├── dashboard.css
+│   │       │   ├── products.css
+│   │       │   ├── cart.css
+│   │       │   ├── checkout.css
+│   │       │   ├── admin.css
+│   │       │   ├── seller.css
+│   │       │   ├── components.css
+│   │       │   ├── animations.css
+│   │       │   ├── responsive.css
+│   │       │   └── utilities.css
+│   │       │
+│   │       ├── images/
+│   │       │   ├── logo/
+│   │       │   │   ├── logo.png
+│   │       │   │   ├── logo-dark.png
+│   │       │   │   ├── logo-white.png
+│   │       │   │   └── favicon.ico
+│   │       │   │
+│   │       │   ├── icons/
+│   │       │   │   ├── user.png
+│   │       │   │   ├── cart.png
+│   │       │   │   ├── search.png
+│   │       │   │   ├── heart.png
+│   │       │   │   ├── bell.png
+│   │       │   │   └── ... (more icons)
+│   │       │   │
+│   │       │   ├── backgrounds/
+│   │       │   │   ├── landing-bg.jpg
+│   │       │   │   ├── auth-bg.jpg
+│   │       │   │   └── pattern-bg.png
+│   │       │   │
+│   │       │   ├── products/
+│   │       │   │   ├── placeholder.png
+│   │       │   │   └── no-image.png
+│   │       │   │
+│   │       │   └── illustrations/
+│   │       │       ├── empty-cart.svg
+│   │       │       ├── no-orders.svg
+│   │       │       ├── success.svg
+│   │       │       └── error.svg
+│   │       │
+│   │       ├── fonts/
+│   │       │   ├── Roboto/
+│   │       │   ├── OpenSans/
+│   │       │   └── Montserrat/
+│   │       │
+│   │       ├── videos/
+│   │       │   └── tutorial.mp4
+│   │       │
+│   │       ├── config/
+│   │       │   ├── application.properties
+│   │       │   ├── application-dev.properties
+│   │       │   ├── application-prod.properties
+│   │       │   ├── database.properties
+│   │       │   ├── email.properties
+│   │       │   ├── payment.properties
+│   │       │   ├── ai.properties
+│   │       │   └── security.properties
+│   │       │
+│   │       ├── templates/
+│   │       │   ├── email/
+│   │       │   │   ├── welcome.html
+│   │       │   │   ├── order-confirmation.html
+│   │       │   │   ├── shipping-notification.html
+│   │       │   │   ├── password-reset.html
+│   │       │   │   └── invoice.html
+│   │       │   │
+│   │       │   ├── sms/
+│   │       │   │   ├── otp.txt
+│   │       │   │   ├── order-update.txt
+│   │       │   │   └── notification.txt
+│   │       │   │
+│   │       │   └── pdf/
+│   │       │       ├── invoice-template.html
+│   │       │       ├── receipt-template.html
+│   │       │       └── report-template.html
+│   │       │
+│   │       ├── i18n/
+│   │       │   ├── messages_en.properties
+│   │       │   ├── messages_es.properties
+│   │       │   ├── messages_fr.properties
+│   │       │   ├── messages_de.properties
+│   │       │   └── messages_zh.properties
+│   │       │
+│   │       └── static/
+│   │           ├── js/
+│   │           │   ├── main.js
+│   │           │   ├── websocket.js
+│   │           │   └── charts.js
+│   │           │
+│   │           └── lib/
+│   │               └── external-libraries/
+│   │
+│   └── test/
+│       ├── java/
+│       │   └── com/
+│       │       └── ecommerce/
+│       │           ├── unit/
+│       │           │   ├── services/
+│       │           │   ├── controllers/
+│       │           │   └── utils/
+│       │           │
+│       │           ├── integration/
+│       │           │   ├── api/
+│       │           │   ├── database/
+│       │           │   └── payment/
+│       │           │
+│       │           └── e2e/
+│       │               ├── AuthFlowTest.java
+│       │               ├── CheckoutFlowTest.java
+│       │               └── OrderFlowTest.java
+│       │
+│       └── resources/
+│           ├── test-data/
+│           └── test-config/
+│
+├── mobile/
+│   ├── android/
+│   │   ├── app/
+│   │   ├── gradle/
+│   │   ├── build.gradle
+│   │   └── AndroidManifest.xml
+│   │
+│   └── ios/
+│       ├── App/
+│       ├── Podfile
+│       └── Info.plist
+│
+├── scripts/
+│   ├── database/
+│   │   ├── 001-initial-schema.sql
+│   │   ├── 002-create-tables.sql
+│   │   ├── 003-seed-data.sql
+│   │   ├── 004-indexes.sql
+│   │   ├── 005-stored-procedures.sql
+│   │   ├── 006-triggers.sql
+│   │   ├── migration/
+│   │   │   ├── migrate-v1-to-v2.sql
+│   │   │   └── migrate-v2-to-v3.sql
+│   │   └── cleanup/
+│   │       └── cleanup-old-data.sql
+│   │
+│   ├── deployment/
+│   │   ├── deploy-dev.sh
+│   │   ├── deploy-staging.sh
+│   │   ├── deploy-prod.sh
+│   │   ├── rollback.sh
+│   │   └── health-check.sh
+│   │
+│   ├── build/
+│   │   ├── build-desktop.sh
+│   │   ├── build-mobile.sh
+│   │   ├── build-all.sh
+│   │   └── package.sh
+│   │
+│   ├── maintenance/
+│   │   ├── backup-database.sh
+│   │   ├── restore-database.sh
+│   │   ├── cleanup-logs.sh
+│   │   ├── optimize-database.sh
+│   │   └── update-analytics.sh
+│   │
+│   └── setup/
+│       ├── install-dependencies.sh
+│       ├── setup-dev-environment.sh
+│       ├── configure-ssl.sh
+│       └── initialize-app.sh
+│
+├── docker/
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   ├── docker-compose-prod.yml
+│   ├── .dockerignore
+│   └── nginx/
+│       └── nginx.conf
+│
+├── kubernetes/
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   ├── ingress.yaml
+│   ├── configmap.yaml
+│   ├── secrets.yaml
+│   └── hpa.yaml
+│
+├── ci-cd/
+│   ├── .github/
+│   │   └── workflows/
+│   │       ├── ci.yml
+│   │       ├── cd.yml
+│   │       └── security-scan.yml
+│   │
+│   ├── .gitlab-ci.yml
+│   ├── Jenkinsfile
+│   └── azure-pipelines.yml
+│
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   ├── modules/
+│   │   ├── vpc/
+│   │   ├── database/
+│   │   ├── app-server/
+│   │   └── load-balancer/
+│   └── environments/
+│       ├── dev/
+│       ├── staging/
+│       └── production/
+│
+├── monitoring/
+│   ├── prometheus/
+│   │   └── prometheus.yml
+│   │
+│   ├── grafana/
+│   │   └── dashboards/
+│   │       ├── app-metrics.json
+│   │       ├── business-metrics.json
+│   │       └── system-metrics.json
+│   │
+│   └── elk/
+│       ├── logstash.conf
+│       ├── elasticsearch.yml
+│       └── kibana.yml
+│
+├── security/
+│   ├── ssl/
+│   │   ├── certificates/
+│   │   └── keys/
+│   │
+│   ├── api-keys/
+│   │   └── .gitkeep
+│   │
+│   └── vault/
+│       └── secrets.yml
+│
+└── tools/
+    ├── data-migration/
+    │   └── MigrationTool.java
+    │
+    ├── seed-generator/
+    │   └── DataSeeder.java
+    │
+    └── performance-testing/
+        ├── load-test.jmx
+        └── stress-test.jmx
