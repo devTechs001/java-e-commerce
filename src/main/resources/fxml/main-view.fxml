@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecommerce.javafx.controller.MainController">
+    <top>
+        <HBox spacing="10" alignment="CENTER" styleClass="header">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <children>
+                <Label text="E-Commerce" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1a73e8;"/>
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <VBox spacing="10" styleClass="sidebar">
+            <padding>
+                <Insets top="15" right="10" bottom="15" left="10"/>
+            </padding>
+            <children>
+                <Button text="Products" fx:id="productsBtn" onAction="#showProducts" styleClass="nav-button" prefWidth="120"/>
+                <Button text="Cart" fx:id="cartBtn" onAction="#showCart" styleClass="nav-button" prefWidth="120"/>
+                <Button text="Orders" fx:id="ordersBtn" onAction="#showOrders" styleClass="nav-button" prefWidth="120"/>
+                <Button text="Profile" fx:id="profileBtn" onAction="#showProfile" styleClass="nav-button" prefWidth="120"/>
+                <Region VBox.vgrow="ALWAYS"/>
+                <Button text="Exit" onAction="#handleExit" styleClass="exit-button" prefWidth="120"/>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <children>
+                <Label text="Welcome to E-Commerce" style="-fx-font-size: 28px; -fx-text-fill: #5f6368;"/>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>
