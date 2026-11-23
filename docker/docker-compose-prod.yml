@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: e-commerce-db-prod
+    environment:
+      POSTGRES_DB: e-commerce
+      POSTGRES_USER: ecommerce
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ecommerce}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - e-commerce
+    restart: unless-stopped
+
+  backend:
+    image: e-commerce/backend:latest
+    container_name: e-commerce-backend-prod
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/e-commerce
+      SPRING_DATASOURCE_USERNAME: ecommerce
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-ecommerce}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRATION: 3600000
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - e-commerce
+    restart: unless-stopped
+
+  frontend:
+    image: e-commerce/frontend:latest
+    container_name: e-commerce-frontend-prod
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - e-commerce
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  e-commerce:
+    driver: bridge
